@@ -1,0 +1,26 @@
+﻿@model PaginationModel
+@{
+}
+
+<nav aria-label="Page navigation example">
+    <ul class="pagination">
+        @for (int i = 0; i < Model.TotalPages; i++)
+        {
+            <li class="page-item"><button class="page-link" onclick="replacePage(@i+1)">@(i + 1)</button></li>
+        }
+
+    </ul>
+</nav>
+
+<script>
+    function replacePage(paramValue) {
+        debugger;
+        var searchParams = new URLSearchParams(window.location.search);
+        searchParams.set('pageNum', paramValue)
+        var newParams = searchParams.toString()
+        var url = window.location.href.split('?')[0];
+        url = url + '?'+newParams
+        window.location.href = url;
+
+    }
+</script>

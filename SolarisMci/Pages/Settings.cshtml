@@ -1,0 +1,52 @@
+﻿@page
+@model SettingsModel
+@{
+    ViewData["Title"] = "Settings";
+}
+<h1>@ViewData["Title"]</h1>
+
+<form class="form-horizontal" method="post">
+    <div class="form-group">
+        <label for="NumOfDigits" class="col-sm-2 control-label">Number of Digits AAA<b>0000...</b></label>
+        <div class="col-sm-10">
+            <input name="NumOfDigits" type="number" value="@Model.NumOfDigits" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="MinDigit" class="col-sm-2 control-label">Min. Digit</label>
+        <div class="col-sm-10">
+            <input name="MinDigit" type="number" min="0" max="8" value="@Model.MinDigit"/>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="MaxDigit" class="col-sm-2 control-label">Max. Digit</label>
+        <div class="col-sm-10">
+            <input name="MaxDigit" type="number" min="1" max="9" value="@Model.MaxDigit" />
+        </div>
+    </div>
+    <br />
+    <div class="form-group">
+        <label for="NumOfLetters" class="col-sm-2 control-label">Number of Letters <b>AAAA...</b>00</label>
+        <div class="col-sm-10">
+            <input name="NumOfLetters" type="number" value="@Model.NumOfLetters" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="MinLetter" class="col-sm-2 control-label">Min. Letter</label>
+        <div class="col-sm-10">
+            <input name="MinLetter" type="text" maxlength="1" value="@Model.MinLetter" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="MaxLetter" class="col-sm-2 control-label">Max. Letter</label>
+        <div class="col-sm-10">
+            <input name="MaxLetter" value="@Model.MaxLetter" />
+        </div>
+    </div>
+    <br />
+    <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+            <button type="submit" class="btn btn-primary">Save changes</button>
+        </div>
+    </div>
+</form>
